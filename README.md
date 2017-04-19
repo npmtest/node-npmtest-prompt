@@ -1,4 +1,7 @@
-# test coverage for  [prompt (v1.0.0)](https://github.com/flatiron/prompt#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-prompt.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-prompt) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-prompt.svg)](https://travis-ci.org/npmtest/node-npmtest-prompt)
+# npmtest-prompt
+
+#### test coverage for  [prompt (v1.0.0)](https://github.com/flatiron/prompt#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-prompt.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-prompt) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-prompt.svg)](https://travis-ci.org/npmtest/node-npmtest-prompt)
+
 #### A beautiful command-line prompt for node.js
 
 [![NPM](https://nodei.co/npm/prompt.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/prompt)
@@ -9,11 +12,17 @@
 | test-report : | [![test-report](https://npmtest.github.io/node-npmtest-prompt/build/test-report.badge.svg)](https://npmtest.github.io/node-npmtest-prompt/build/test-report.html)|
 | build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-prompt/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-prompt/tree/gh-pages/build)|
 
-[![istanbul-coverage](https://npmtest.github.io/node-npmtest-prompt/build/screenCapture.buildCi.browser.coverage.example.html.png)](https://npmtest.github.io/node-npmtest-prompt/build/coverage.html/index.html)
+- [https://npmtest.github.io/node-npmtest-prompt/build/coverage.html/index.html](https://npmtest.github.io/node-npmtest-prompt/build/coverage.html/index.html)
 
-[![test-report](https://npmtest.github.io/node-npmtest-prompt/build/screenCapture.buildCi.browser.test-report.html.png)](https://npmtest.github.io/node-npmtest-prompt/build/test-report.html)
+[![istanbul-coverage](https://npmtest.github.io/node-npmtest-prompt/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fcoverage.lib.html.png)](https://npmtest.github.io/node-npmtest-prompt/build/coverage.html/index.html)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-prompt/build/screenCapture.buildCi.browser.apidoc.html.png)](https://npmdoc.github.io/node-npmdoc-prompt/build/apidoc.html)
+- [https://npmtest.github.io/node-npmtest-prompt/build/test-report.html](https://npmtest.github.io/node-npmtest-prompt/build/test-report.html)
+
+[![test-report](https://npmtest.github.io/node-npmtest-prompt/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Ftest-report.html.png)](https://npmtest.github.io/node-npmtest-prompt/build/test-report.html)
+
+- [https://npmdoc.github.io/node-npmdoc-prompt/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-prompt/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-prompt/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-prompt/build/apidoc.html)
 
 ![npmPackageListing](https://npmtest.github.io/node-npmtest-prompt/build/screenCapture.npmPackageListing.svg)
 
