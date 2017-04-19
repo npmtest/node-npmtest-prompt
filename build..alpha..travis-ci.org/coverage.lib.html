@@ -1,5 +1,7 @@
-<html lang="en"><head>
-    <title>Code coverage report for node-npmtest-prompt/prompt/lib/prompt.js</title>
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for node-npmtest-prompt/node_modules/prompt/lib/prompt.js</title>
     <meta charset="utf-8">
     <style>
         body, html {
@@ -192,7 +194,7 @@
     <h1 style="font-weight: bold;">
         <a href="https://github.com/npmtest/node-npmtest-prompt">npmtest-prompt (v0.0.1)</a>
     </h1>
-    <h1>Code coverage report for <span class="entity">node-npmtest-prompt/prompt/lib/prompt.js</span></h1>
+    <h1>Code coverage report for <span class="entity">node-npmtest-prompt/node_modules/prompt/lib/prompt.js</span></h1>
     <h2>
         
         Statements: <span class="metric">12.27% <small>(34 / 277)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
@@ -208,11 +210,11 @@
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../../index.html">All files</a> » <a href="index.html">node-npmtest-prompt/prompt/lib/</a> » prompt.js</div>
+    <div class="path"><a href="../../../../index.html">All files</a> &#187; <a href="index.html">node-npmtest-prompt/node_modules/prompt/lib/</a> &#187; prompt.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
-<tbody><tr><td class="line-count">1
+<tr><td class="line-count">1
 2
 3
 4
@@ -1800,14 +1802,14 @@ var events = require('events'),
 // Monkey-punch readline.Interface to work-around
 // https://github.com/joyent/node/issues/3860
 //
-readline.Interface.prototype.setPrompt = <span class="fstat-no" title="function not covered">function(prompt, length) {</span>
-<span class="cstat-no" title="statement not covered">  this._prompt = prompt;</span>
-<span class="cstat-no" title="statement not covered">  if (length) {</span>
-<span class="cstat-no" title="statement not covered">    this._promptLength = length;</span>
+readline.Interface.prototype.setPrompt = <span class="fstat-no" title="function not covered" >function(prompt, length) {</span>
+<span class="cstat-no" title="statement not covered" >  this._prompt = prompt;</span>
+<span class="cstat-no" title="statement not covered" >  if (length) {</span>
+<span class="cstat-no" title="statement not covered" >    this._promptLength = length;</span>
   } else {
-<span class="cstat-no" title="statement not covered">    var lines = prompt.split(/[\r\n]/);</span>
-<span class="cstat-no" title="statement not covered">    var lastLine = lines[lines.length - 1];</span>
-<span class="cstat-no" title="statement not covered">    this._promptLength = lastLine.replace(/\u001b\[(\d+(;\d+)*)?m/g, '').length;</span>
+<span class="cstat-no" title="statement not covered" >    var lines = prompt.split(/[\r\n]/);</span>
+<span class="cstat-no" title="statement not covered" >    var lastLine = lines[lines.length - 1];</span>
+<span class="cstat-no" title="statement not covered" >    this._promptLength = lastLine.replace(/\u001b\[(\d+(;\d+)*)?m/g, '').length;</span>
   }
 };
 &nbsp;
@@ -1849,84 +1851,84 @@ logger.cli();
 // and `options.stdout`. If no streams are supplied, then `process.stdin`
 // and `process.stdout` are used, respectively.
 //
-prompt.start = <span class="fstat-no" title="function not covered">function (options) {</span>
-<span class="cstat-no" title="statement not covered">  if (prompt.started) {</span>
-<span class="cstat-no" title="statement not covered">    return;</span>
+prompt.start = <span class="fstat-no" title="function not covered" >function (options) {</span>
+<span class="cstat-no" title="statement not covered" >  if (prompt.started) {</span>
+<span class="cstat-no" title="statement not covered" >    return;</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  options = options        || {};</span>
-<span class="cstat-no" title="statement not covered">  stdin   = options.stdin  || process.stdin;</span>
-<span class="cstat-no" title="statement not covered">  stdout  = options.stdout || process.stdout;</span>
+<span class="cstat-no" title="statement not covered" >  options = options        || {};</span>
+<span class="cstat-no" title="statement not covered" >  stdin   = options.stdin  || process.stdin;</span>
+<span class="cstat-no" title="statement not covered" >  stdout  = options.stdout || process.stdout;</span>
 &nbsp;
   //
   // By default: Remember the last `10` prompt property /
   // answer pairs and don't allow empty responses globally.
   //
-<span class="cstat-no" title="statement not covered">  prompt.memory     = options.memory     || 10;</span>
-<span class="cstat-no" title="statement not covered">  prompt.allowEmpty = options.allowEmpty || false;</span>
-<span class="cstat-no" title="statement not covered">  prompt.message    = options.message    || prompt.message;</span>
-<span class="cstat-no" title="statement not covered">  prompt.delimiter  = options.delimiter  || prompt.delimiter;</span>
-<span class="cstat-no" title="statement not covered">  prompt.colors     = options.colors     || prompt.colors;</span>
+<span class="cstat-no" title="statement not covered" >  prompt.memory     = options.memory     || 10;</span>
+<span class="cstat-no" title="statement not covered" >  prompt.allowEmpty = options.allowEmpty || false;</span>
+<span class="cstat-no" title="statement not covered" >  prompt.message    = options.message    || prompt.message;</span>
+<span class="cstat-no" title="statement not covered" >  prompt.delimiter  = options.delimiter  || prompt.delimiter;</span>
+<span class="cstat-no" title="statement not covered" >  prompt.colors     = options.colors     || prompt.colors;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  if (process.platform !== 'win32') {</span>
+<span class="cstat-no" title="statement not covered" >  if (process.platform !== 'win32') {</span>
     // windows falls apart trying to deal with SIGINT
-<span class="cstat-no" title="statement not covered">    process.on('SIGINT', <span class="fstat-no" title="function not covered">function () {</span></span>
-<span class="cstat-no" title="statement not covered">      stdout.write('\n');</span>
-<span class="cstat-no" title="statement not covered">      process.exit(1);</span>
+<span class="cstat-no" title="statement not covered" >    process.on('SIGINT', <span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >      stdout.write('\n');</span>
+<span class="cstat-no" title="statement not covered" >      process.exit(1);</span>
     });
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  prompt.emit('start');</span>
-<span class="cstat-no" title="statement not covered">  prompt.started = true;</span>
-<span class="cstat-no" title="statement not covered">  prompt.stopped = false;</span>
-<span class="cstat-no" title="statement not covered">  return prompt;</span>
+<span class="cstat-no" title="statement not covered" >  prompt.emit('start');</span>
+<span class="cstat-no" title="statement not covered" >  prompt.started = true;</span>
+<span class="cstat-no" title="statement not covered" >  prompt.stopped = false;</span>
+<span class="cstat-no" title="statement not covered" >  return prompt;</span>
 };
 &nbsp;
 //
 // ### function pause ()
 // Pauses input coming in from stdin
 //
-prompt.pause = <span class="fstat-no" title="function not covered">function () {</span>
-<span class="cstat-no" title="statement not covered">  if (!prompt.started || prompt.stopped || prompt.paused) {</span>
-<span class="cstat-no" title="statement not covered">    return;</span>
+prompt.pause = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >  if (!prompt.started || prompt.stopped || prompt.paused) {</span>
+<span class="cstat-no" title="statement not covered" >    return;</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  stdin.pause();</span>
-<span class="cstat-no" title="statement not covered">  prompt.emit('pause');</span>
-<span class="cstat-no" title="statement not covered">  prompt.paused = true;</span>
-<span class="cstat-no" title="statement not covered">  return prompt;</span>
+<span class="cstat-no" title="statement not covered" >  stdin.pause();</span>
+<span class="cstat-no" title="statement not covered" >  prompt.emit('pause');</span>
+<span class="cstat-no" title="statement not covered" >  prompt.paused = true;</span>
+<span class="cstat-no" title="statement not covered" >  return prompt;</span>
 };
 &nbsp;
 //
 // ### function stop ()
 // Stops input coming in from stdin
 //
-prompt.stop = <span class="fstat-no" title="function not covered">function () {</span>
-<span class="cstat-no" title="statement not covered">    if (prompt.stopped || !prompt.started) {</span>
-<span class="cstat-no" title="statement not covered">        return;</span>
+prompt.stop = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >    if (prompt.stopped || !prompt.started) {</span>
+<span class="cstat-no" title="statement not covered" >        return;</span>
     }
     
-<span class="cstat-no" title="statement not covered">    stdin.destroy();</span>
-<span class="cstat-no" title="statement not covered">    prompt.emit('stop');</span>
-<span class="cstat-no" title="statement not covered">    prompt.stopped = true;</span>
-<span class="cstat-no" title="statement not covered">    prompt.started = false;</span>
-<span class="cstat-no" title="statement not covered">    prompt.paused = false;</span>
-<span class="cstat-no" title="statement not covered">    return prompt;</span>
+<span class="cstat-no" title="statement not covered" >    stdin.destroy();</span>
+<span class="cstat-no" title="statement not covered" >    prompt.emit('stop');</span>
+<span class="cstat-no" title="statement not covered" >    prompt.stopped = true;</span>
+<span class="cstat-no" title="statement not covered" >    prompt.started = false;</span>
+<span class="cstat-no" title="statement not covered" >    prompt.paused = false;</span>
+<span class="cstat-no" title="statement not covered" >    return prompt;</span>
 }
 &nbsp;
 //
 // ### function resume ()
 // Resumes input coming in from stdin
 //
-prompt.resume = <span class="fstat-no" title="function not covered">function () {</span>
-<span class="cstat-no" title="statement not covered">  if (!prompt.started || !prompt.paused) {</span>
-<span class="cstat-no" title="statement not covered">    return;</span>
+prompt.resume = <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >  if (!prompt.started || !prompt.paused) {</span>
+<span class="cstat-no" title="statement not covered" >    return;</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  stdin.resume();</span>
-<span class="cstat-no" title="statement not covered">  prompt.emit('resume');</span>
-<span class="cstat-no" title="statement not covered">  prompt.paused = false;</span>
-<span class="cstat-no" title="statement not covered">  return prompt;</span>
+<span class="cstat-no" title="statement not covered" >  stdin.resume();</span>
+<span class="cstat-no" title="statement not covered" >  prompt.emit('resume');</span>
+<span class="cstat-no" title="statement not covered" >  prompt.paused = false;</span>
+<span class="cstat-no" title="statement not covered" >  return prompt;</span>
 };
 &nbsp;
 //
@@ -1935,23 +1937,23 @@ prompt.resume = <span class="fstat-no" title="function not covered">function () 
 // Returns the `property:value` pair from within the prompts
 // `history` array.
 //
-prompt.history = <span class="fstat-no" title="function not covered">function (search) {</span>
-<span class="cstat-no" title="statement not covered">  if (typeof search === 'number') {</span>
-<span class="cstat-no" title="statement not covered">    return history[search] || {};</span>
+prompt.history = <span class="fstat-no" title="function not covered" >function (search) {</span>
+<span class="cstat-no" title="statement not covered" >  if (typeof search === 'number') {</span>
+<span class="cstat-no" title="statement not covered" >    return history[search] || {};</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  var names = history.map(<span class="fstat-no" title="function not covered">function (pair) {</span></span>
-<span class="cstat-no" title="statement not covered">    return typeof pair.property === 'string'</span>
+<span class="cstat-no" title="statement not covered" >  var names = history.map(<span class="fstat-no" title="function not covered" >function (pair) {</span></span>
+<span class="cstat-no" title="statement not covered" >    return typeof pair.property === 'string'</span>
       ? pair.property
       : pair.property.name;
   });
 &nbsp;
-<span class="cstat-no" title="statement not covered">  if (!~names.indexOf(search)) {</span>
-<span class="cstat-no" title="statement not covered">    return null;</span>
+<span class="cstat-no" title="statement not covered" >  if (!~names.indexOf(search)) {</span>
+<span class="cstat-no" title="statement not covered" >    return null;</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  return history.filter(<span class="fstat-no" title="function not covered">function (pair) {</span></span>
-<span class="cstat-no" title="statement not covered">    return typeof pair.property === 'string'</span>
+<span class="cstat-no" title="statement not covered" >  return history.filter(<span class="fstat-no" title="function not covered" >function (pair) {</span></span>
+<span class="cstat-no" title="statement not covered" >    return typeof pair.property === 'string'</span>
       ? pair.property === search
       : pair.property.name === search;
   })[0];
@@ -1963,38 +1965,38 @@ prompt.history = <span class="fstat-no" title="function not covered">function (s
 // #### @callback {function} Continuation to pass control to when complete.
 // Gets input from the user via stdin for the specified message(s) `msg`.
 //
-prompt.get = <span class="fstat-no" title="function not covered">function (schema, callback) {</span>
+prompt.get = <span class="fstat-no" title="function not covered" >function (schema, callback) {</span>
   //
   // Transforms a full JSON-schema into an array describing path and sub-schemas.
   // Used for iteration purposes.
   //
-<span class="fstat-no" title="function not covered">  function untangle(schema, path) {</span>
-<span class="cstat-no" title="statement not covered">    var results = [];</span>
-<span class="cstat-no" title="statement not covered">    path = path || [];</span>
+<span class="fstat-no" title="function not covered" >  function untangle(schema, path) {</span>
+<span class="cstat-no" title="statement not covered" >    var results = [];</span>
+<span class="cstat-no" title="statement not covered" >    path = path || [];</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">    if (schema.properties) {</span>
+<span class="cstat-no" title="statement not covered" >    if (schema.properties) {</span>
       //
       // Iterate over the properties in the schema and use recursion
       // to process sub-properties.
       //
-<span class="cstat-no" title="statement not covered">      Object.keys(schema.properties).forEach(<span class="fstat-no" title="function not covered">function (key) {</span></span>
-<span class="cstat-no" title="statement not covered">        var obj = {};</span>
-<span class="cstat-no" title="statement not covered">        obj[key] = schema.properties[key];</span>
+<span class="cstat-no" title="statement not covered" >      Object.keys(schema.properties).forEach(<span class="fstat-no" title="function not covered" >function (key) {</span></span>
+<span class="cstat-no" title="statement not covered" >        var obj = {};</span>
+<span class="cstat-no" title="statement not covered" >        obj[key] = schema.properties[key];</span>
 &nbsp;
         //
         // Concat a sub-untangling to the results.
         //
-<span class="cstat-no" title="statement not covered">        results = results.concat(untangle(obj[key], path.concat(key)));</span>
+<span class="cstat-no" title="statement not covered" >        results = results.concat(untangle(obj[key], path.concat(key)));</span>
       });
 &nbsp;
       // Return the results.
-<span class="cstat-no" title="statement not covered">      return results;</span>
+<span class="cstat-no" title="statement not covered" >      return results;</span>
     }
 &nbsp;
     //
     // This is a schema "leaf".
     //
-<span class="cstat-no" title="statement not covered">    return {</span>
+<span class="cstat-no" title="statement not covered" >    return {</span>
       path: path,
       schema: schema
     };
@@ -2017,59 +2019,59 @@ prompt.get = <span class="fstat-no" title="function not covered">function (schem
   //
   //    { path: ['path', 'to', 'property'], properties: { path: { to: ...} } }
   //
-<span class="fstat-no" title="function not covered">  function iterate(schema, get, done) {</span>
-<span class="cstat-no" title="statement not covered">    var iterator = [],</span>
+<span class="fstat-no" title="function not covered" >  function iterate(schema, get, done) {</span>
+<span class="cstat-no" title="statement not covered" >    var iterator = [],</span>
         result = {};
 &nbsp;
-<span class="cstat-no" title="statement not covered">    if (typeof schema === 'string') {</span>
+<span class="cstat-no" title="statement not covered" >    if (typeof schema === 'string') {</span>
       //
       // We can iterate over a single string.
       //
-<span class="cstat-no" title="statement not covered">      iterator.push({</span>
+<span class="cstat-no" title="statement not covered" >      iterator.push({</span>
         path: [schema],
         schema: prompt.properties[schema.toLowerCase()] || {}
       });
     }
-    else <span class="cstat-no" title="statement not covered">if (Array.isArray(schema)) {</span>
+    else <span class="cstat-no" title="statement not covered" >if (Array.isArray(schema)) {</span>
       //
       // An array of strings and/or single-prop schema and/or no-prop schema.
       //
-<span class="cstat-no" title="statement not covered">      iterator = schema.map(<span class="fstat-no" title="function not covered">function (element) {</span></span>
-<span class="cstat-no" title="statement not covered">        if (typeof element === 'string') {</span>
-<span class="cstat-no" title="statement not covered">          return {</span>
+<span class="cstat-no" title="statement not covered" >      iterator = schema.map(<span class="fstat-no" title="function not covered" >function (element) {</span></span>
+<span class="cstat-no" title="statement not covered" >        if (typeof element === 'string') {</span>
+<span class="cstat-no" title="statement not covered" >          return {</span>
             path: [element],
             schema: prompt.properties[element.toLowerCase()] || {}
           };
         }
-        else <span class="cstat-no" title="statement not covered">if (element.properties) {</span>
-<span class="cstat-no" title="statement not covered">          return {</span>
+        else <span class="cstat-no" title="statement not covered" >if (element.properties) {</span>
+<span class="cstat-no" title="statement not covered" >          return {</span>
             path: [Object.keys(element.properties)[0]],
             schema: element.properties[Object.keys(element.properties)[0]]
           };
         }
-        else <span class="cstat-no" title="statement not covered">if (element.path &amp;&amp; element.schema) {</span>
-<span class="cstat-no" title="statement not covered">          return element;</span>
+        else <span class="cstat-no" title="statement not covered" >if (element.path &amp;&amp; element.schema) {</span>
+<span class="cstat-no" title="statement not covered" >          return element;</span>
         }
         else {
-<span class="cstat-no" title="statement not covered">          return {</span>
+<span class="cstat-no" title="statement not covered" >          return {</span>
             path: [element.name || 'question'],
             schema: element
           };
         }
       });
     }
-    else <span class="cstat-no" title="statement not covered">if (schema.properties) {</span>
+    else <span class="cstat-no" title="statement not covered" >if (schema.properties) {</span>
       //
       // Or a complete schema `untangle` it for use.
       //
-<span class="cstat-no" title="statement not covered">      iterator = untangle(schema);</span>
+<span class="cstat-no" title="statement not covered" >      iterator = untangle(schema);</span>
     }
     else {
       //
       // Or a partial schema and path.
       // TODO: Evaluate need for this option.
       //
-<span class="cstat-no" title="statement not covered">      iterator = [{</span>
+<span class="cstat-no" title="statement not covered" >      iterator = [{</span>
         schema: schema.schema ? schema.schema : schema,
         path: schema.path || [schema.name || 'question']
       }];
@@ -2078,54 +2080,54 @@ prompt.get = <span class="fstat-no" title="function not covered">function (schem
     //
     // Now, iterate and assemble the result.
     //
-<span class="cstat-no" title="statement not covered">    async.forEachSeries(iterator, <span class="fstat-no" title="function not covered">function (branch, next) {</span></span>
-<span class="cstat-no" title="statement not covered">      get(branch, <span class="fstat-no" title="function not covered">function assembler(err, line) {</span></span>
-<span class="cstat-no" title="statement not covered">        if (err) {</span>
-<span class="cstat-no" title="statement not covered">          return next(err);</span>
+<span class="cstat-no" title="statement not covered" >    async.forEachSeries(iterator, <span class="fstat-no" title="function not covered" >function (branch, next) {</span></span>
+<span class="cstat-no" title="statement not covered" >      get(branch, <span class="fstat-no" title="function not covered" >function assembler(err, line) {</span></span>
+<span class="cstat-no" title="statement not covered" >        if (err) {</span>
+<span class="cstat-no" title="statement not covered" >          return next(err);</span>
         }
 &nbsp;
-<span class="fstat-no" title="function not covered">        function build(path, line) {</span>
-<span class="cstat-no" title="statement not covered">          var obj = {};</span>
-<span class="cstat-no" title="statement not covered">          if (path.length) {</span>
-<span class="cstat-no" title="statement not covered">            obj[path[0]] = build(path.slice(1), line);</span>
-<span class="cstat-no" title="statement not covered">            return obj;</span>
+<span class="fstat-no" title="function not covered" >        function build(path, line) {</span>
+<span class="cstat-no" title="statement not covered" >          var obj = {};</span>
+<span class="cstat-no" title="statement not covered" >          if (path.length) {</span>
+<span class="cstat-no" title="statement not covered" >            obj[path[0]] = build(path.slice(1), line);</span>
+<span class="cstat-no" title="statement not covered" >            return obj;</span>
           }
 &nbsp;
-<span class="cstat-no" title="statement not covered">          return line;</span>
+<span class="cstat-no" title="statement not covered" >          return line;</span>
         }
 &nbsp;
-<span class="fstat-no" title="function not covered">        function attach(obj, attr) {</span>
-<span class="cstat-no" title="statement not covered">          var keys;</span>
-<span class="cstat-no" title="statement not covered">          if (typeof attr !== 'object' || attr instanceof Array) {</span>
-<span class="cstat-no" title="statement not covered">            return attr;</span>
+<span class="fstat-no" title="function not covered" >        function attach(obj, attr) {</span>
+<span class="cstat-no" title="statement not covered" >          var keys;</span>
+<span class="cstat-no" title="statement not covered" >          if (typeof attr !== 'object' || attr instanceof Array) {</span>
+<span class="cstat-no" title="statement not covered" >            return attr;</span>
           }
 &nbsp;
-<span class="cstat-no" title="statement not covered">          keys = Object.keys(attr);</span>
-<span class="cstat-no" title="statement not covered">          if (keys.length) {</span>
-<span class="cstat-no" title="statement not covered">            if (!obj[keys[0]]) {</span>
-<span class="cstat-no" title="statement not covered">              obj[keys[0]] = {};</span>
+<span class="cstat-no" title="statement not covered" >          keys = Object.keys(attr);</span>
+<span class="cstat-no" title="statement not covered" >          if (keys.length) {</span>
+<span class="cstat-no" title="statement not covered" >            if (!obj[keys[0]]) {</span>
+<span class="cstat-no" title="statement not covered" >              obj[keys[0]] = {};</span>
             }
-<span class="cstat-no" title="statement not covered">            obj[keys[0]] = attach(obj[keys[0]], attr[keys[0]]);</span>
+<span class="cstat-no" title="statement not covered" >            obj[keys[0]] = attach(obj[keys[0]], attr[keys[0]]);</span>
           }
 &nbsp;
-<span class="cstat-no" title="statement not covered">          return obj;</span>
+<span class="cstat-no" title="statement not covered" >          return obj;</span>
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered">        result = attach(result, build(branch.path, line));</span>
-<span class="cstat-no" title="statement not covered">        next();</span>
+<span class="cstat-no" title="statement not covered" >        result = attach(result, build(branch.path, line));</span>
+<span class="cstat-no" title="statement not covered" >        next();</span>
       });
-    }, <span class="fstat-no" title="function not covered">function (err) {</span>
-<span class="cstat-no" title="statement not covered">      return err ? done(err) : done(null, result);</span>
+    }, <span class="fstat-no" title="function not covered" >function (err) {</span>
+<span class="cstat-no" title="statement not covered" >      return err ? done(err) : done(null, result);</span>
     });
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  iterate(schema, <span class="fstat-no" title="function not covered">function get(target, next) {</span></span>
-<span class="cstat-no" title="statement not covered">    prompt.getInput(target, <span class="fstat-no" title="function not covered">function (err, line) {</span></span>
-<span class="cstat-no" title="statement not covered">      return err ? next(err) : next(null, line);</span>
+<span class="cstat-no" title="statement not covered" >  iterate(schema, <span class="fstat-no" title="function not covered" >function get(target, next) {</span></span>
+<span class="cstat-no" title="statement not covered" >    prompt.getInput(target, <span class="fstat-no" title="function not covered" >function (err, line) {</span></span>
+<span class="cstat-no" title="statement not covered" >      return err ? next(err) : next(null, line);</span>
     });
   }, callback);
 &nbsp;
-<span class="cstat-no" title="statement not covered">  return prompt;</span>
+<span class="cstat-no" title="statement not covered" >  return prompt;</span>
 };
 &nbsp;
 //
@@ -2145,8 +2147,8 @@ prompt.get = <span class="fstat-no" title="function not covered">function (schem
 //      message: 'yes/no' // optional - message to display for invalid responses
 //    }
 //
-prompt.confirm = <span class="fstat-no" title="function not covered">function (/* msg, options, callback */) {</span>
-<span class="cstat-no" title="statement not covered">  var args     = Array.prototype.slice.call(arguments),</span>
+prompt.confirm = <span class="fstat-no" title="function not covered" >function (/* msg, options, callback */) {</span>
+<span class="cstat-no" title="statement not covered" >  var args     = Array.prototype.slice.call(arguments),</span>
       msg      = args.shift(),
       callback = args.pop(),
       opts     = args.shift(),
@@ -2154,8 +2156,8 @@ prompt.confirm = <span class="fstat-no" title="function not covered">function (/
       RX_Y     = /^[yt]{1}/i,
       RX_YN    = /^[yntf]{1}/i;
 &nbsp;
-<span class="fstat-no" title="function not covered">  function confirm(target, next) {</span>
-<span class="cstat-no" title="statement not covered">    var yes = target.yes || RX_Y,</span>
+<span class="fstat-no" title="function not covered" >  function confirm(target, next) {</span>
+<span class="cstat-no" title="statement not covered" >    var yes = target.yes || RX_Y,</span>
       options = utile.mixin({
         description: typeof target === 'string' ? target : target.description||'yes/no',
         pattern: target.pattern || RX_YN,
@@ -2164,13 +2166,13 @@ prompt.confirm = <span class="fstat-no" title="function not covered">function (/
       }, opts || {});
 &nbsp;
 &nbsp;
-<span class="cstat-no" title="statement not covered">    prompt.get([options], <span class="fstat-no" title="function not covered">function (err, result) {</span></span>
-<span class="cstat-no" title="statement not covered">      next(err ? false : yes.test(result[options.name]));</span>
+<span class="cstat-no" title="statement not covered" >    prompt.get([options], <span class="fstat-no" title="function not covered" >function (err, result) {</span></span>
+<span class="cstat-no" title="statement not covered" >      next(err ? false : yes.test(result[options.name]));</span>
     });
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  async.rejectSeries(vars, confirm, <span class="fstat-no" title="function not covered">function(result) {</span></span>
-<span class="cstat-no" title="statement not covered">    callback(null, result.length===0);</span>
+<span class="cstat-no" title="statement not covered" >  async.rejectSeries(vars, confirm, <span class="fstat-no" title="function not covered" >function(result) {</span></span>
+<span class="cstat-no" title="statement not covered" >    callback(null, result.length===0);</span>
   });
 };
 &nbsp;
@@ -2184,8 +2186,8 @@ var tmp = [];
 // #### @callback {function} Continuation to pass control to when complete.
 // Gets input from the user via stdin for the specified message `msg`.
 //
-prompt.getInput = <span class="fstat-no" title="function not covered">function (prop, callback) {</span>
-<span class="cstat-no" title="statement not covered">  var schema = prop.schema || prop,</span>
+prompt.getInput = <span class="fstat-no" title="function not covered" >function (prop, callback) {</span>
+<span class="cstat-no" title="statement not covered" >  var schema = prop.schema || prop,</span>
       propName = prop.path &amp;&amp; prop.path.join(':') || prop,
       storedSchema = prompt.properties[propName.toLowerCase()],
       delim = prompt.delimiter,
@@ -2202,30 +2204,30 @@ prompt.getInput = <span class="fstat-no" title="function not covered">function (
   // If there is a stored schema for `propName` in `propmpt.properties`
   // then use it.
   //
-<span class="cstat-no" title="statement not covered">  if (schema instanceof Object &amp;&amp; !Object.keys(schema).length &amp;&amp;</span>
+<span class="cstat-no" title="statement not covered" >  if (schema instanceof Object &amp;&amp; !Object.keys(schema).length &amp;&amp;</span>
     typeof storedSchema !== 'undefined') {
-<span class="cstat-no" title="statement not covered">    schema = storedSchema;</span>
+<span class="cstat-no" title="statement not covered" >    schema = storedSchema;</span>
   }
 &nbsp;
   //
   // Build a proper validation schema if we just have a string
   // and no `storedSchema`.
   //
-<span class="cstat-no" title="statement not covered">  if (typeof prop === 'string' &amp;&amp; !storedSchema) {</span>
-<span class="cstat-no" title="statement not covered">    schema = {};</span>
+<span class="cstat-no" title="statement not covered" >  if (typeof prop === 'string' &amp;&amp; !storedSchema) {</span>
+<span class="cstat-no" title="statement not covered" >    schema = {};</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  schema = convert(schema);</span>
-<span class="cstat-no" title="statement not covered">  defaultLine = schema.default;</span>
-<span class="cstat-no" title="statement not covered">  name = prop.description || schema.description || propName;</span>
-<span class="cstat-no" title="statement not covered">  raw = prompt.colors</span>
+<span class="cstat-no" title="statement not covered" >  schema = convert(schema);</span>
+<span class="cstat-no" title="statement not covered" >  defaultLine = schema.default;</span>
+<span class="cstat-no" title="statement not covered" >  name = prop.description || schema.description || propName;</span>
+<span class="cstat-no" title="statement not covered" >  raw = prompt.colors</span>
     ? [colors.grey(name), colors.grey(delim)]
     : [name, delim];
 &nbsp;
-<span class="cstat-no" title="statement not covered">  if (prompt.message)</span>
-<span class="cstat-no" title="statement not covered">    raw.unshift(prompt.message, delim);</span>
+<span class="cstat-no" title="statement not covered" >  if (prompt.message)</span>
+<span class="cstat-no" title="statement not covered" >    raw.unshift(prompt.message, delim);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  prop = {</span>
+<span class="cstat-no" title="statement not covered" >  prop = {</span>
     schema: schema,
     path: propName.split(':')
   };
@@ -2235,11 +2237,11 @@ prompt.getInput = <span class="fstat-no" title="function not covered">function (
   // it to an object containing the current schema
   // for `propName`.
   //
-<span class="cstat-no" title="statement not covered">  if (!schema.properties) {</span>
-<span class="cstat-no" title="statement not covered">    schema = (<span class="fstat-no" title="function not covered">function () {</span></span>
-<span class="cstat-no" title="statement not covered">      var obj = { properties: {} };</span>
-<span class="cstat-no" title="statement not covered">      obj.properties[propName] = schema;</span>
-<span class="cstat-no" title="statement not covered">      return obj;</span>
+<span class="cstat-no" title="statement not covered" >  if (!schema.properties) {</span>
+<span class="cstat-no" title="statement not covered" >    schema = (<span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >      var obj = { properties: {} };</span>
+<span class="cstat-no" title="statement not covered" >      obj.properties[propName] = schema;</span>
+<span class="cstat-no" title="statement not covered" >      return obj;</span>
     })();
   }
 &nbsp;
@@ -2247,154 +2249,154 @@ prompt.getInput = <span class="fstat-no" title="function not covered">function (
   // Handle overrides here.
   // TODO: Make overrides nestable
   //
-<span class="cstat-no" title="statement not covered">  if (prompt.override &amp;&amp; prompt.override[propName]) {</span>
-<span class="cstat-no" title="statement not covered">    if (prompt._performValidation(name, prop, prompt.override, schema, -1, callback)) {</span>
-<span class="cstat-no" title="statement not covered">      return callback(null, prompt.override[propName]);</span>
+<span class="cstat-no" title="statement not covered" >  if (prompt.override &amp;&amp; prompt.override[propName]) {</span>
+<span class="cstat-no" title="statement not covered" >    if (prompt._performValidation(name, prop, prompt.override, schema, -1, callback)) {</span>
+<span class="cstat-no" title="statement not covered" >      return callback(null, prompt.override[propName]);</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered">    delete prompt.override[propName];</span>
+<span class="cstat-no" title="statement not covered" >    delete prompt.override[propName];</span>
   }
 &nbsp;
   //
   // Check if we should skip this prompt
   //
-<span class="cstat-no" title="statement not covered">  if (typeof prop.schema.ask === 'function' &amp;&amp;</span>
+<span class="cstat-no" title="statement not covered" >  if (typeof prop.schema.ask === 'function' &amp;&amp;</span>
     !prop.schema.ask()) {
-<span class="cstat-no" title="statement not covered">    return callback(null, prop.schema.default || '');</span>
+<span class="cstat-no" title="statement not covered" >    return callback(null, prop.schema.default || '');</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  var type = (schema.properties &amp;&amp; schema.properties[propName] &amp;&amp;</span>
+<span class="cstat-no" title="statement not covered" >  var type = (schema.properties &amp;&amp; schema.properties[propName] &amp;&amp;</span>
               schema.properties[propName].type || '').toLowerCase().trim(),
       wait = type === 'array';
 &nbsp;
-<span class="cstat-no" title="statement not covered">  if (type === 'array') {</span>
-<span class="cstat-no" title="statement not covered">    length = prop.schema.maxItems;</span>
-<span class="cstat-no" title="statement not covered">    if (length) {</span>
-<span class="cstat-no" title="statement not covered">      msg = (tmp.length + 1).toString() + '/' + length.toString();</span>
+<span class="cstat-no" title="statement not covered" >  if (type === 'array') {</span>
+<span class="cstat-no" title="statement not covered" >    length = prop.schema.maxItems;</span>
+<span class="cstat-no" title="statement not covered" >    if (length) {</span>
+<span class="cstat-no" title="statement not covered" >      msg = (tmp.length + 1).toString() + '/' + length.toString();</span>
     }
     else {
-<span class="cstat-no" title="statement not covered">      msg = (tmp.length + 1).toString();</span>
+<span class="cstat-no" title="statement not covered" >      msg = (tmp.length + 1).toString();</span>
     }
-<span class="cstat-no" title="statement not covered">    msg += delim;</span>
-<span class="cstat-no" title="statement not covered">    raw.push(prompt.colors ? msg.grey : msg);</span>
+<span class="cstat-no" title="statement not covered" >    msg += delim;</span>
+<span class="cstat-no" title="statement not covered" >    raw.push(prompt.colors ? msg.grey : msg);</span>
   }
 &nbsp;
   //
   // Calculate the raw length and colorize the prompt
   //
-<span class="cstat-no" title="statement not covered">  length = raw.join('').length;</span>
-<span class="cstat-no" title="statement not covered">  raw[0] = raw[0];</span>
-<span class="cstat-no" title="statement not covered">  msg = raw.join('');</span>
+<span class="cstat-no" title="statement not covered" >  length = raw.join('').length;</span>
+<span class="cstat-no" title="statement not covered" >  raw[0] = raw[0];</span>
+<span class="cstat-no" title="statement not covered" >  msg = raw.join('');</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  if (schema.help) {</span>
-<span class="cstat-no" title="statement not covered">    schema.help.forEach(<span class="fstat-no" title="function not covered">function (line) {</span></span>
-<span class="cstat-no" title="statement not covered">      logger.help(line);</span>
+<span class="cstat-no" title="statement not covered" >  if (schema.help) {</span>
+<span class="cstat-no" title="statement not covered" >    schema.help.forEach(<span class="fstat-no" title="function not covered" >function (line) {</span></span>
+<span class="cstat-no" title="statement not covered" >      logger.help(line);</span>
     });
   }
 &nbsp;
   //
   // Emit a "prompting" event
   //
-<span class="cstat-no" title="statement not covered">  prompt.emit('prompt', prop);</span>
+<span class="cstat-no" title="statement not covered" >  prompt.emit('prompt', prop);</span>
 &nbsp;
   //
   // If there is no default line, set it to an empty string
   //
-<span class="cstat-no" title="statement not covered">  if(typeof defaultLine === 'undefined') {</span>
-<span class="cstat-no" title="statement not covered">    defaultLine = '';</span>
+<span class="cstat-no" title="statement not covered" >  if(typeof defaultLine === 'undefined') {</span>
+<span class="cstat-no" title="statement not covered" >    defaultLine = '';</span>
   }
 &nbsp;
   //
   // set to string for readline ( will not accept Numbers )
   //
-<span class="cstat-no" title="statement not covered">  defaultLine = defaultLine.toString();</span>
+<span class="cstat-no" title="statement not covered" >  defaultLine = defaultLine.toString();</span>
 &nbsp;
   //
   // Make the actual read
   //
-<span class="cstat-no" title="statement not covered">  read({</span>
+<span class="cstat-no" title="statement not covered" >  read({</span>
     prompt: msg,
     silent: prop.schema &amp;&amp; prop.schema.hidden,
     replace: prop.schema &amp;&amp; prop.schema.replace,
     default: defaultLine,
     input: stdin,
     output: stdout
-  }, <span class="fstat-no" title="function not covered">function (err, line) {</span>
-<span class="cstat-no" title="statement not covered">    if (err &amp;&amp; wait === false) {</span>
-<span class="cstat-no" title="statement not covered">      return callback(err);</span>
+  }, <span class="fstat-no" title="function not covered" >function (err, line) {</span>
+<span class="cstat-no" title="statement not covered" >    if (err &amp;&amp; wait === false) {</span>
+<span class="cstat-no" title="statement not covered" >      return callback(err);</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered">    var against = {},</span>
+<span class="cstat-no" title="statement not covered" >    var against = {},</span>
         numericInput,
         isValid;
 &nbsp;
-<span class="cstat-no" title="statement not covered">    if (line !== '') {</span>
+<span class="cstat-no" title="statement not covered" >    if (line !== '') {</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">      if (schema.properties[propName]) {</span>
-<span class="cstat-no" title="statement not covered">        var type = (schema.properties[propName].type || '').toLowerCase().trim() || undefined;</span>
+<span class="cstat-no" title="statement not covered" >      if (schema.properties[propName]) {</span>
+<span class="cstat-no" title="statement not covered" >        var type = (schema.properties[propName].type || '').toLowerCase().trim() || undefined;</span>
 &nbsp;
         //
         // If type is some sort of numeric create a Number object to pass to revalidator
         //
-<span class="cstat-no" title="statement not covered">        if (type === 'number' || type === 'integer') {</span>
-<span class="cstat-no" title="statement not covered">          line = Number(line);</span>
+<span class="cstat-no" title="statement not covered" >        if (type === 'number' || type === 'integer') {</span>
+<span class="cstat-no" title="statement not covered" >          line = Number(line);</span>
         }
 &nbsp;
         //
         // Attempt to parse input as a boolean if the schema expects a boolean
         //
-<span class="cstat-no" title="statement not covered">        if (type == 'boolean') {</span>
-<span class="cstat-no" title="statement not covered">          if(line.toLowerCase() === "true" || line.toLowerCase() === 't') {</span>
-<span class="cstat-no" title="statement not covered">            line = true;</span>
-          } else <span class="cstat-no" title="statement not covered">if(line.toLowerCase() === "false" || line.toLowerCase() === 'f') {</span>
-<span class="cstat-no" title="statement not covered">            line = false;</span>
+<span class="cstat-no" title="statement not covered" >        if (type == 'boolean') {</span>
+<span class="cstat-no" title="statement not covered" >          if(line.toLowerCase() === "true" || line.toLowerCase() === 't') {</span>
+<span class="cstat-no" title="statement not covered" >            line = true;</span>
+          } else <span class="cstat-no" title="statement not covered" >if(line.toLowerCase() === "false" || line.toLowerCase() === 'f') {</span>
+<span class="cstat-no" title="statement not covered" >            line = false;</span>
           }
         }
 &nbsp;
         //
         // If the type is an array, wait for the end. Fixes #54
         //
-<span class="cstat-no" title="statement not covered">        if (type == 'array') {</span>
-<span class="cstat-no" title="statement not covered">          var length = prop.schema.maxItems;</span>
-<span class="cstat-no" title="statement not covered">          if (err) {</span>
-<span class="cstat-no" title="statement not covered">            if (err.message == 'canceled') {</span>
-<span class="cstat-no" title="statement not covered">              wait = false;</span>
-<span class="cstat-no" title="statement not covered">              stdout.write('\n');</span>
+<span class="cstat-no" title="statement not covered" >        if (type == 'array') {</span>
+<span class="cstat-no" title="statement not covered" >          var length = prop.schema.maxItems;</span>
+<span class="cstat-no" title="statement not covered" >          if (err) {</span>
+<span class="cstat-no" title="statement not covered" >            if (err.message == 'canceled') {</span>
+<span class="cstat-no" title="statement not covered" >              wait = false;</span>
+<span class="cstat-no" title="statement not covered" >              stdout.write('\n');</span>
             }
           }
           else {
-<span class="cstat-no" title="statement not covered">            if (length) {</span>
-<span class="cstat-no" title="statement not covered">              if (tmp.length + 1 &lt; length) {</span>
-<span class="cstat-no" title="statement not covered">                isValid = false;</span>
-<span class="cstat-no" title="statement not covered">                wait = true;</span>
+<span class="cstat-no" title="statement not covered" >            if (length) {</span>
+<span class="cstat-no" title="statement not covered" >              if (tmp.length + 1 &lt; length) {</span>
+<span class="cstat-no" title="statement not covered" >                isValid = false;</span>
+<span class="cstat-no" title="statement not covered" >                wait = true;</span>
               }
               else {
-<span class="cstat-no" title="statement not covered">                isValid = true;</span>
-<span class="cstat-no" title="statement not covered">                wait = false;</span>
+<span class="cstat-no" title="statement not covered" >                isValid = true;</span>
+<span class="cstat-no" title="statement not covered" >                wait = false;</span>
               }
             }
             else {
-<span class="cstat-no" title="statement not covered">              isValid = false;</span>
-<span class="cstat-no" title="statement not covered">              wait = true;</span>
+<span class="cstat-no" title="statement not covered" >              isValid = false;</span>
+<span class="cstat-no" title="statement not covered" >              wait = true;</span>
             }
-<span class="cstat-no" title="statement not covered">            tmp.push(line);</span>
+<span class="cstat-no" title="statement not covered" >            tmp.push(line);</span>
           }
-<span class="cstat-no" title="statement not covered">          line = tmp;</span>
+<span class="cstat-no" title="statement not covered" >          line = tmp;</span>
         }
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered">      against[propName] = line;</span>
+<span class="cstat-no" title="statement not covered" >      against[propName] = line;</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered">    if (prop &amp;&amp; prop.schema.before) {</span>
-<span class="cstat-no" title="statement not covered">      line = prop.schema.before(line);</span>
+<span class="cstat-no" title="statement not covered" >    if (prop &amp;&amp; prop.schema.before) {</span>
+<span class="cstat-no" title="statement not covered" >      line = prop.schema.before(line);</span>
     }
 &nbsp;
     // Validate
-<span class="cstat-no" title="statement not covered">    if (isValid === undefined) <span class="cstat-no" title="statement not covered">isValid = prompt._performValidation(name, prop, against, schema, line, callback);</span></span>
+<span class="cstat-no" title="statement not covered" >    if (isValid === undefined) <span class="cstat-no" title="statement not covered" >isValid = prompt._performValidation(name, prop, against, schema, line, callback);</span></span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">    if (!isValid) {</span>
-<span class="cstat-no" title="statement not covered">      return prompt.getInput(prop, callback);</span>
+<span class="cstat-no" title="statement not covered" >    if (!isValid) {</span>
+<span class="cstat-no" title="statement not covered" >      return prompt.getInput(prop, callback);</span>
     }
 &nbsp;
     //
@@ -2402,12 +2404,12 @@ prompt.getInput = <span class="fstat-no" title="function not covered">function (
     // pair to the history for `prompt` and respond to
     // the callback.
     //
-<span class="cstat-no" title="statement not covered">    logger.input(line.yellow);</span>
-<span class="cstat-no" title="statement not covered">    prompt._remember(propName, line);</span>
-<span class="cstat-no" title="statement not covered">    callback(null, line);</span>
+<span class="cstat-no" title="statement not covered" >    logger.input(line.yellow);</span>
+<span class="cstat-no" title="statement not covered" >    prompt._remember(propName, line);</span>
+<span class="cstat-no" title="statement not covered" >    callback(null, line);</span>
 &nbsp;
     // Make sure `tmp` is emptied
-<span class="cstat-no" title="statement not covered">    tmp = [];</span>
+<span class="cstat-no" title="statement not covered" >    tmp = [];</span>
   });
 };
 &nbsp;
@@ -2421,33 +2423,33 @@ prompt.getInput = <span class="fstat-no" title="function not covered">function (
 // #### @callback {function} Continuation to pass control to when complete.
 // Perfoms user input validation, print errors if needed and returns value according to validation
 //
-prompt._performValidation = <span class="fstat-no" title="function not covered">function (name, prop, against, schema, line, callback) {</span>
-<span class="cstat-no" title="statement not covered">  var numericInput, valid, msg;</span>
-<span class="cstat-no" title="statement not covered">  try {</span>
-<span class="cstat-no" title="statement not covered">    valid = validate(against, schema);</span>
+prompt._performValidation = <span class="fstat-no" title="function not covered" >function (name, prop, against, schema, line, callback) {</span>
+<span class="cstat-no" title="statement not covered" >  var numericInput, valid, msg;</span>
+<span class="cstat-no" title="statement not covered" >  try {</span>
+<span class="cstat-no" title="statement not covered" >    valid = validate(against, schema);</span>
   }
   catch (err) {
-<span class="cstat-no" title="statement not covered">    return (line !== -1) ? callback(err) : false;</span>
+<span class="cstat-no" title="statement not covered" >    return (line !== -1) ? callback(err) : false;</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  if (!valid.valid) {</span>
-<span class="cstat-no" title="statement not covered">    if (prop.schema.message) {</span>
-<span class="cstat-no" title="statement not covered">      logger.error(prop.schema.message);</span>
+<span class="cstat-no" title="statement not covered" >  if (!valid.valid) {</span>
+<span class="cstat-no" title="statement not covered" >    if (prop.schema.message) {</span>
+<span class="cstat-no" title="statement not covered" >      logger.error(prop.schema.message);</span>
     } else {
-<span class="cstat-no" title="statement not covered">      msg = line !== -1 ? 'Invalid input for ' : 'Invalid command-line input for ';</span>
+<span class="cstat-no" title="statement not covered" >      msg = line !== -1 ? 'Invalid input for ' : 'Invalid command-line input for ';</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">      if (prompt.colors) {</span>
-<span class="cstat-no" title="statement not covered">        logger.error(msg + name.grey);</span>
+<span class="cstat-no" title="statement not covered" >      if (prompt.colors) {</span>
+<span class="cstat-no" title="statement not covered" >        logger.error(msg + name.grey);</span>
       }
       else {
-<span class="cstat-no" title="statement not covered">        logger.error(msg + name);</span>
+<span class="cstat-no" title="statement not covered" >        logger.error(msg + name);</span>
       }
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered">    prompt.emit('invalid', prop, line);</span>
+<span class="cstat-no" title="statement not covered" >    prompt.emit('invalid', prop, line);</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  return valid.valid;</span>
+<span class="cstat-no" title="statement not covered" >  return valid.valid;</span>
 };
 &nbsp;
 //
@@ -2458,46 +2460,46 @@ prompt._performValidation = <span class="fstat-no" title="function not covered">
 // Prompts the user for values each of the `properties` if `obj` does not already
 // have a value for the property. Responds with the modified object.
 //
-prompt.addProperties = <span class="fstat-no" title="function not covered">function (obj, properties, callback) {</span>
-<span class="cstat-no" title="statement not covered">  properties = properties.filter(<span class="fstat-no" title="function not covered">function (prop) {</span></span>
-<span class="cstat-no" title="statement not covered">    return typeof obj[prop] === 'undefined';</span>
+prompt.addProperties = <span class="fstat-no" title="function not covered" >function (obj, properties, callback) {</span>
+<span class="cstat-no" title="statement not covered" >  properties = properties.filter(<span class="fstat-no" title="function not covered" >function (prop) {</span></span>
+<span class="cstat-no" title="statement not covered" >    return typeof obj[prop] === 'undefined';</span>
   });
 &nbsp;
-<span class="cstat-no" title="statement not covered">  if (properties.length === 0) {</span>
-<span class="cstat-no" title="statement not covered">    return callback(obj);</span>
+<span class="cstat-no" title="statement not covered" >  if (properties.length === 0) {</span>
+<span class="cstat-no" title="statement not covered" >    return callback(obj);</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  prompt.get(properties, <span class="fstat-no" title="function not covered">function (err, results) {</span></span>
-<span class="cstat-no" title="statement not covered">    if (err) {</span>
-<span class="cstat-no" title="statement not covered">      return callback(err);</span>
+<span class="cstat-no" title="statement not covered" >  prompt.get(properties, <span class="fstat-no" title="function not covered" >function (err, results) {</span></span>
+<span class="cstat-no" title="statement not covered" >    if (err) {</span>
+<span class="cstat-no" title="statement not covered" >      return callback(err);</span>
     }
-    else <span class="cstat-no" title="statement not covered">if (!results) {</span>
-<span class="cstat-no" title="statement not covered">      return callback(null, obj);</span>
+    else <span class="cstat-no" title="statement not covered" >if (!results) {</span>
+<span class="cstat-no" title="statement not covered" >      return callback(null, obj);</span>
     }
 &nbsp;
-<span class="fstat-no" title="function not covered">    function putNested (obj, path, value) {</span>
-<span class="cstat-no" title="statement not covered">      var last = obj, key;</span>
+<span class="fstat-no" title="function not covered" >    function putNested (obj, path, value) {</span>
+<span class="cstat-no" title="statement not covered" >      var last = obj, key;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">      while (path.length &gt; 1) {</span>
-<span class="cstat-no" title="statement not covered">        key = path.shift();</span>
-<span class="cstat-no" title="statement not covered">        if (!last[key]) {</span>
-<span class="cstat-no" title="statement not covered">          last[key] = {};</span>
+<span class="cstat-no" title="statement not covered" >      while (path.length &gt; 1) {</span>
+<span class="cstat-no" title="statement not covered" >        key = path.shift();</span>
+<span class="cstat-no" title="statement not covered" >        if (!last[key]) {</span>
+<span class="cstat-no" title="statement not covered" >          last[key] = {};</span>
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered">        last = last[key];</span>
+<span class="cstat-no" title="statement not covered" >        last = last[key];</span>
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered">      last[path.shift()] = value;</span>
+<span class="cstat-no" title="statement not covered" >      last[path.shift()] = value;</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered">    Object.keys(results).forEach(<span class="fstat-no" title="function not covered">function (key) {</span></span>
-<span class="cstat-no" title="statement not covered">      putNested(obj, key.split('.'), results[key]);</span>
+<span class="cstat-no" title="statement not covered" >    Object.keys(results).forEach(<span class="fstat-no" title="function not covered" >function (key) {</span></span>
+<span class="cstat-no" title="statement not covered" >      putNested(obj, key.split('.'), results[key]);</span>
     });
 &nbsp;
-<span class="cstat-no" title="statement not covered">    callback(null, obj);</span>
+<span class="cstat-no" title="statement not covered" >    callback(null, obj);</span>
   });
 &nbsp;
-<span class="cstat-no" title="statement not covered">  return prompt;</span>
+<span class="cstat-no" title="statement not covered" >  return prompt;</span>
 };
 &nbsp;
 //
@@ -2507,8 +2509,8 @@ prompt.addProperties = <span class="fstat-no" title="function not covered">funct
 // Prepends the `property:value` pair into the private `history` Array
 // for `prompt` so that it can be accessed later.
 //
-prompt._remember = <span class="fstat-no" title="function not covered">function (property, value) {</span>
-<span class="cstat-no" title="statement not covered">  history.unshift({</span>
+prompt._remember = <span class="fstat-no" title="function not covered" >function (property, value) {</span>
+<span class="cstat-no" title="statement not covered" >  history.unshift({</span>
     property: property,
     value: value
   });
@@ -2518,8 +2520,8 @@ prompt._remember = <span class="fstat-no" title="function not covered">function 
   // has exceeded the specified length to remember,
   // `prompt.memory`, truncate it.
   //
-<span class="cstat-no" title="statement not covered">  if (history.length &gt; prompt.memory) {</span>
-<span class="cstat-no" title="statement not covered">    history.splice(prompt.memory, history.length - prompt.memory);</span>
+<span class="cstat-no" title="statement not covered" >  if (history.length &gt; prompt.memory) {</span>
+<span class="cstat-no" title="statement not covered" >    history.splice(prompt.memory, history.length - prompt.memory);</span>
   }
 };
 &nbsp;
@@ -2528,48 +2530,47 @@ prompt._remember = <span class="fstat-no" title="function not covered">function 
 // #### @schema {Object} Schema for a property
 // Converts the schema into new format if it is in old format
 //
-<span class="fstat-no" title="function not covered">function convert(schema) {</span>
-<span class="cstat-no" title="statement not covered">  var newProps = Object.keys(validate.messages),</span>
+<span class="fstat-no" title="function not covered" >function convert(schema) {</span>
+<span class="cstat-no" title="statement not covered" >  var newProps = Object.keys(validate.messages),</span>
       newSchema = false,
       key;
 &nbsp;
-<span class="cstat-no" title="statement not covered">  newProps = newProps.concat(['description', 'dependencies']);</span>
+<span class="cstat-no" title="statement not covered" >  newProps = newProps.concat(['description', 'dependencies']);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">  for (key in schema) {</span>
-<span class="cstat-no" title="statement not covered">    if (newProps.indexOf(key) &gt; 0) {</span>
-<span class="cstat-no" title="statement not covered">      newSchema = true;</span>
-<span class="cstat-no" title="statement not covered">      break;</span>
+<span class="cstat-no" title="statement not covered" >  for (key in schema) {</span>
+<span class="cstat-no" title="statement not covered" >    if (newProps.indexOf(key) &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >      newSchema = true;</span>
+<span class="cstat-no" title="statement not covered" >      break;</span>
     }
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  if (!newSchema || schema.validator || schema.warning || typeof schema.empty !== 'undefined') {</span>
-<span class="cstat-no" title="statement not covered">    schema.description = schema.message;</span>
-<span class="cstat-no" title="statement not covered">    schema.message = schema.warning;</span>
+<span class="cstat-no" title="statement not covered" >  if (!newSchema || schema.validator || schema.warning || typeof schema.empty !== 'undefined') {</span>
+<span class="cstat-no" title="statement not covered" >    schema.description = schema.message;</span>
+<span class="cstat-no" title="statement not covered" >    schema.message = schema.warning;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">    if (typeof schema.validator === 'function') {</span>
-<span class="cstat-no" title="statement not covered">      schema.conform = schema.validator;</span>
+<span class="cstat-no" title="statement not covered" >    if (typeof schema.validator === 'function') {</span>
+<span class="cstat-no" title="statement not covered" >      schema.conform = schema.validator;</span>
     } else {
-<span class="cstat-no" title="statement not covered">      schema.pattern = schema.validator;</span>
+<span class="cstat-no" title="statement not covered" >      schema.pattern = schema.validator;</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered">    if (typeof schema.empty !== 'undefined') {</span>
-<span class="cstat-no" title="statement not covered">      schema.required = !(schema.empty);</span>
+<span class="cstat-no" title="statement not covered" >    if (typeof schema.empty !== 'undefined') {</span>
+<span class="cstat-no" title="statement not covered" >      schema.required = !(schema.empty);</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered">    delete schema.warning;</span>
-<span class="cstat-no" title="statement not covered">    delete schema.validator;</span>
-<span class="cstat-no" title="statement not covered">    delete schema.empty;</span>
+<span class="cstat-no" title="statement not covered" >    delete schema.warning;</span>
+<span class="cstat-no" title="statement not covered" >    delete schema.validator;</span>
+<span class="cstat-no" title="statement not covered" >    delete schema.empty;</span>
   }
 &nbsp;
-<span class="cstat-no" title="statement not covered">  return schema;</span>
+<span class="cstat-no" title="statement not covered" >  return schema;</span>
 }
 &nbsp;
 &nbsp;</pre></td></tr>
-</tbody></table></pre>
+</table></pre>
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Sat Apr 15 2017 19:50:44 GMT+0000 (UTC)</div>
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Wed Apr 19 2017 08:42:58 GMT+0000 (UTC)</div>
 </div>
-
-
-</body></html>
+</body>
+</html>
